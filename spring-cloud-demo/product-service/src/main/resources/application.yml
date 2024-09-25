@@ -13,12 +13,6 @@ mybatis:
     map-underscore-to-camel-case: true  #自动驼峰转换
 # 配置打印 MyBatis 执行的 SQL
 logging:
-  file:
-    name: logs/springboot.log
-  logback:
-    rollingpolicy:
-      max-file-size: 1KB
-      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i
   level:
     com:
       example:
