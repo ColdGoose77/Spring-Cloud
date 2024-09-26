@@ -21,5 +21,6 @@ public class OrderInfo {
     private Byte deleteFlag;
     private Date createTime;
     private Date updateTime;
+    private ProductInfo productInfo;
 
 }
