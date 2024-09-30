@@ -19,4 +19,10 @@ logging:
         demo: debug
 
 server:
-  port: 58080
+  port: 8080
+
+#Eureka Client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10010/eureka/
