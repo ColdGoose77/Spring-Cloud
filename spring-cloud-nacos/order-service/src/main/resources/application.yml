@@ -10,6 +10,10 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+        cluster-name: BJ
+    loadbalancer:
+      nacos:
+        enabled: true
 # 设置 Mybatis 的 xml 保存路径
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
