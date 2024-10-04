@@ -49,18 +49,28 @@ public class OrderService {
 //        return orderInfo;
 //    }
 
-    @PostConstruct
-    public void init() {
-        instances = discoveryClient.getInstances("product-service");
-    }
+//    @PostConstruct
+//    public void init() {
+//        instances = discoveryClient.getInstances("product-service");
+//    }
+
+//    public OrderInfo selectOrderById(Integer orderId) {
+//        OrderInfo orderInfo = orderMapper.selectOrderById(orderId);
+////        String url = "http://localhost:58081/product/1001";
+//        int index = count.getAndIncrement() % instances.size();
+//        String uri = instances.get(index).getUri().toString();
+//        String url = uri + "/product/" + orderInfo.getProductId();
+//        log.info("远程调用url:{}", url);
+//        ProductInfo productInfo = restTemplate.getForObject(url, ProductInfo.class);
+//        orderInfo.setProductInfo(productInfo);
+//
+//        return orderInfo;
+//    }
 
     public OrderInfo selectOrderById(Integer orderId) {
         OrderInfo orderInfo = orderMapper.selectOrderById(orderId);
-//        String url = "http://localhost:58081/product/1001";
-        int index = count.getAndIncrement() % instances.size();
-        String uri = instances.get(index).getUri().toString();
-        String url = uri + "/product/" + orderInfo.getProductId();
-        log.info("远程调用url:{}", url);
+        String url = "http://product-service/product/" + orderInfo.getProductId();
+        log.info("接收到参数：{}", url);
         ProductInfo productInfo = restTemplate.getForObject(url, ProductInfo.class);
         orderInfo.setProductInfo(productInfo);
 
