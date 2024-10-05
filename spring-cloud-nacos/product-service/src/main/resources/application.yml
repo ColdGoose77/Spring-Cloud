@@ -10,6 +10,7 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+        namespace: 7529e128-8fab-4043-87af-44fb0e394000
 # 设置 Mybatis 的 xml 保存路径
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml

@@ -12,6 +12,7 @@ spring:
         server-addr: 127.0.0.1:8848
         cluster-name: BJ
         ephemeral: false
+        namespace: 7529e128-8fab-4043-87af-44fb0e394000
     loadbalancer:
       nacos:
         enabled: true
